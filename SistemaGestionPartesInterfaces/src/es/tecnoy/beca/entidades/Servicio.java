@@ -61,7 +61,7 @@ public class Servicio {
 	
 	@ManyToOne
 	@JoinColumn(name="FK_CODIGO_EMPRESA", referencedColumnName="codigo")
-	private EmpresaServicios empresa;
+	private EmpresaServicio empresa;
 	
 	
 	//-----------------------Constructoras y metodos----------------------------
@@ -71,7 +71,7 @@ public class Servicio {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Servicio(Integer codigo, String descripcion, Date fechaInicio, Date fechaFin, Cliente cliente, EmpresaServicios empresa) {
+	public Servicio(Integer codigo, String descripcion, Date fechaInicio, Date fechaFin, Cliente cliente, EmpresaServicio empresa) {
 		super();
 		this.codigo = codigo;
 		this.descripcion = descripcion;
@@ -137,11 +137,11 @@ public class Servicio {
 		this.tecnicos = tecnicos;
 	}
 
-	public EmpresaServicios getEmpresa() {
+	public EmpresaServicio getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(EmpresaServicios empresa) {
+	public void setEmpresa(EmpresaServicio empresa) {
 		this.empresa = empresa;
 	}
 	
