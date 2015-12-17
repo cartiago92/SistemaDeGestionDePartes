@@ -1,4 +1,4 @@
-package es.tecnoy.beca.interfaces;
+package es.tecnoy.beca.persistencia.interfaces;
 
 import java.util.List;
 
