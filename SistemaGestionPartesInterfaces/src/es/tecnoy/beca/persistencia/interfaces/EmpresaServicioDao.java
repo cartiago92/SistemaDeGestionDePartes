@@ -1,7 +1,7 @@
 package es.tecnoy.beca.persistencia.interfaces;
 
-import es.tecnoy.beca.entidades.EmpresaServicios;
+import es.tecnoy.beca.entidades.EmpresaServicio;
 
-public interface EmpresaServicioDao extends Dao<EmpresaServicios, Integer> {
+public interface EmpresaServicioDao extends Dao<EmpresaServicio, Integer> {
 
 }
