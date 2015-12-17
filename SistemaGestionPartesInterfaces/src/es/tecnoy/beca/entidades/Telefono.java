@@ -1,4 +1,4 @@
-package es.tecnoy.modelo.entidad;
+package es.tecnoy.beca.entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
