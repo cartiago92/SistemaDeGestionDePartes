@@ -14,7 +14,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="PTR_TECNICOS")
-public class EmpresaServicios {
+public class EmpresaServicio {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -38,11 +38,11 @@ public class EmpresaServicios {
 	
 	
 	//Hibernate siempre necesita el constructor por defecto por la sessiones
-	public EmpresaServicios() {
+	public EmpresaServicio() {
 		super();
 	}
 
-	public EmpresaServicios(Integer codigo, String nombre, String descripcion, String web, Domicilio domicilio,
+	public EmpresaServicio(Integer codigo, String nombre, String descripcion, String web, Domicilio domicilio,
 			String observaciones, List<Tecnico> tecnico) {
 		super();
 		Codigo = codigo;

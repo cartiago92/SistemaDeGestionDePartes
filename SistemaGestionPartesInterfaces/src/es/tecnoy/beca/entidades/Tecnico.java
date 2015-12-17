@@ -26,7 +26,7 @@ public class Tecnico {
 	
 	@ManyToOne
 	@JoinColumn(name="FK_CODIGO_EMPRESA", referencedColumnName="codigo")
-	private EmpresaServicios empresa;
+	private EmpresaServicio empresa;
 	
 	//Cuando pones ManyTomMany puedes ponerlo solo en uno de los extremos y ya lo cogeria
 	@ManyToMany(mappedBy="tecnicos")
@@ -36,7 +36,7 @@ public class Tecnico {
 		super();
 	}
 
-	public Tecnico(Integer codigo, String nombre, String apellido, String email, String telefono, EmpresaServicios empresa,
+	public Tecnico(Integer codigo, String nombre, String apellido, String email, String telefono, EmpresaServicio empresa,
 			List<Servicio> servicios) {
 		super();
 		Codigo = codigo;
@@ -88,11 +88,11 @@ public class Tecnico {
 		this.telefono = telefono;
 	}
 
-	public EmpresaServicios getEmpresa() {
+	public EmpresaServicio getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(EmpresaServicios empresa) {
+	public void setEmpresa(EmpresaServicio empresa) {
 		this.empresa = empresa;
 	}
 
