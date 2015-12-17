@@ -16,4 +16,13 @@
       </plugin>
     </plugins>
   </build>
+  
+  <dependencies>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.1.7.Final</version>
+		</dependency>
+	</dependencies>
+	
 </project>
