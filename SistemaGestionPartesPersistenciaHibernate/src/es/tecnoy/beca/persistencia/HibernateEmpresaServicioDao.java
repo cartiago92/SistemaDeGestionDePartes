@@ -11,22 +11,11 @@ import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateEmpresaServicioDao extends HibernateAbstractDao implements EmpresaServicioDao{
 
-<<<<<<< HEAD
-	public HibernateEmpresaServicioDao(HibernateContextoPersistencia cp) {
-		super();
-		this.getCp();
-	}
-
-	@Override
-	public void add(EmpresaServicio entidad) {
-		Session session = getCp().getSesionActual();
-=======
 	private HibernateContextoPersistencia cp;
 
 	@Override
 	public void add(EmpresaServicio entidad) {
 		Session session = cp.getSesionActual();
->>>>>>> e4a2c88fd3ae8eb62738c3f51a44abbb46f487a5
 		
 		Integer pk = (Integer) session.save(entidad);
 		
