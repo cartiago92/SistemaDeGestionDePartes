@@ -3,7 +3,6 @@ package es.tecnoy.beca.persistencia;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 
 import es.tecnoy.beca.entidades.EmpresaServicio;
 import es.tecnoy.beca.persistencia.interfaces.EmpresaServicioDao;
