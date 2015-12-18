@@ -1,21 +1,16 @@
 package es.tecnoy.beca.persistencia;
 
-import org.hibernate.SessionFactory;
+import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public abstract class HibernateAbstractDao {
 
-	private SessionFactory sf;
+	private HibernateContextoPersistencia cp;
 
-	public HibernateAbstractDao() {
-		super();
+	public HibernateContextoPersistencia getCp() {
+		return cp;
 	}
 
-	public void setSf(SessionFactory sf) {
-		this.sf = sf;
+	public void setCp(HibernateContextoPersistencia cp) {
+		this.cp = cp;
 	}
-
-	public SessionFactory getSf() {
-		return sf;
-	}
-
 }
