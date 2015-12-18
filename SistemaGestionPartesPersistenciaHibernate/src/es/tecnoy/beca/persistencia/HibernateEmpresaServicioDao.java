@@ -9,17 +9,18 @@ import org.hibernate.SessionFactory;
 
 import es.tecnoy.beca.entidades.EmpresaServicio;
 import es.tecnoy.beca.persistencia.interfaces.EmpresaServicioDao;
+import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateEmpresaServicioDao extends HibernateAbstractDao implements EmpresaServicioDao{
 
-	public HibernateEmpresaServicioDao(SessionFactory sf) {
+	public HibernateEmpresaServicioDao(HibernateContextoPersistencia cp) {
 		super();
-		this.setSf(sf);
+		this.getCp();
 	}
 
 	@Override
 	public void add(EmpresaServicio entidad) {
-		Session session = getSf().getCurrentSession();
+		Session session = getCp().getSesionActual();
 		
 		Integer pk = (Integer) session.save(entidad);
 		

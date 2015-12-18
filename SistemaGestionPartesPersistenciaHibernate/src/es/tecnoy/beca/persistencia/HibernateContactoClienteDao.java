@@ -12,12 +12,12 @@ public class HibernateContactoClienteDao extends HibernateAbstractDao implements
 
 	public HibernateContactoClienteDao(SessionFactory sf) {
 		super();
-		this.setSf(sf);
+		this.getCp();
 	}
 	
 	@Override
 	public void add(ContactoCliente entidad) {
-		Session sesion = getSf().getCurrentSession();
+		Session sesion = getCp().getSesionActual();
 		Integer pk = (Integer) sesion.save(entidad);
 		sesion.evict(entidad); // Esto para que al realizar la sesion activa 
 		entidad.setCodigo(pk);
@@ -33,7 +33,7 @@ public class HibernateContactoClienteDao extends HibernateAbstractDao implements
 
 	@Override
 	public void edit(ContactoCliente entidad) {
-		Session sesion = getSf().getCurrentSession();
+		Session sesion = getCp().getSesionActual();
 		sesion.update(entidad);
 	}
 		

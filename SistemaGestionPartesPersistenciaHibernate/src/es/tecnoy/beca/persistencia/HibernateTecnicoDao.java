@@ -7,18 +7,19 @@ import org.hibernate.SessionFactory;
 
 import es.tecnoy.beca.entidades.Tecnico;
 import es.tecnoy.beca.persistencia.interfaces.TecnicoDao;
+import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateTecnicoDao extends HibernateAbstractDao implements TecnicoDao{
 	
 
-	public HibernateTecnicoDao(SessionFactory sf) {
+	public HibernateTecnicoDao(HibernateContextoPersistencia cp) {
 		super();
-		this.setSf(sf);
+		this.getCp();
 	}
 
 	@Override
 	public void add(Tecnico entidad) {
-		Session session = getSf().getCurrentSession();
+		Session session = getCp().getSesionActual();
 		
 		Integer pk = (Integer) session.save(entidad);
 		
