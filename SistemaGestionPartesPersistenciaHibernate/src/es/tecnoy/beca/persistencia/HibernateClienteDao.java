@@ -10,10 +10,18 @@ import es.tecnoy.beca.persistencia.interfaces.ClienteDao;
 import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateClienteDao extends HibernateAbstractDao implements ClienteDao{
+	
+	public HibernateClienteDao() {
+		super();
+	}
 
 	public HibernateClienteDao(HibernateContextoPersistencia cp) {
 		super();
+<<<<<<< HEAD
 		this.getCp();
+=======
+		this.setCp(cp);
+>>>>>>> e4a2c88fd3ae8eb62738c3f51a44abbb46f487a5
 	}
 	
 	@Override

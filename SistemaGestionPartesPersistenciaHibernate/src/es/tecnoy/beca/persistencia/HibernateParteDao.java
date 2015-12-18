@@ -14,9 +14,19 @@ import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateParteDao extends HibernateAbstractDao implements ParteDao {
 
+<<<<<<< HEAD
 	public HibernateParteDao(HibernateContextoPersistencia cp) {
 		super();
 		this.getCp();
+=======
+	public HibernateParteDao() {
+		super();
+	}
+	
+	public HibernateParteDao(HibernateContextoPersistencia cp) {
+		super();
+		this.setCp(cp);
+>>>>>>> e4a2c88fd3ae8eb62738c3f51a44abbb46f487a5
 	}
 
 	@Override
