@@ -7,18 +7,15 @@ import org.hibernate.SessionFactory;
 
 import es.tecnoy.beca.entidades.Tecnico;
 import es.tecnoy.beca.persistencia.interfaces.TecnicoDao;
+import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateTecnicoDao extends HibernateAbstractDao implements TecnicoDao{
+
+	private HibernateContextoPersistencia cp;
 	
-
-	public HibernateTecnicoDao(SessionFactory sf) {
-		super();
-		this.setSf(sf);
-	}
-
 	@Override
 	public void add(Tecnico entidad) {
-		Session session = getSf().getCurrentSession();
+		Session session = cp.getSesionActual();
 		
 		Integer pk = (Integer) session.save(entidad);
 		
@@ -32,25 +29,29 @@ public class HibernateTecnicoDao extends HibernateAbstractDao implements Tecnico
 	@Override
 	public void remove(Integer codigo) {
 		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Todavia no esta implementado");
 		
 	}
 
 	@Override
 	public void edit(Tecnico entidad) {
 		// TODO Auto-generated method stub
+		throw new UnsupportedOperationException("Todavia no esta implementado");
 		
 	}
 
 	@Override
 	public Tecnico query(Integer codigo) {
 		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException("Todavia no esta implementado");
+		//return null;
 	}
 
 	@Override
 	public List<Tecnico> query() {
 		// TODO Auto-generated method stub
-		return null;
+		throw new UnsupportedOperationException("Todavia no esta implementado");
+		//return null;
 	}
 
 	
