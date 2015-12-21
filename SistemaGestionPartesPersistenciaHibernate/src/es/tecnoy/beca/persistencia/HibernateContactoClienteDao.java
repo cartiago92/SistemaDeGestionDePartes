@@ -7,12 +7,21 @@ import org.hibernate.SessionFactory;
 
 import es.tecnoy.beca.entidades.ContactoCliente;
 import es.tecnoy.beca.persistencia.interfaces.ContactoClienteDao;
+import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateContactoClienteDao extends HibernateAbstractDao implements ContactoClienteDao{
 
-	public HibernateContactoClienteDao(SessionFactory sf) {
+	private HibernateContextoPersistencia cp;
+	
+	
+	public HibernateContactoClienteDao() {
 		super();
-		this.getCp();
+		// TODO Auto-generated constructor stub
+	}
+
+	public HibernateContactoClienteDao(HibernateContextoPersistencia cp) {
+		super();
+		this.setCp(cp);
 	}
 	
 	@Override

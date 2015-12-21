@@ -11,10 +11,15 @@ import es.tecnoy.beca.entidades.Servicio;
 
 public class HibernateServicioDao extends HibernateAbstractDao implements ServicioDao {
 
+	public HibernateServicioDao() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	// A esto se le llama inyeccion por dependencia o inyeccion por constructor
 	public HibernateServicioDao(HibernateContextoPersistencia cp) {
 		super();
-		this.getCp();
+		this.setCp(cp);
 	}
 
 	@Override
