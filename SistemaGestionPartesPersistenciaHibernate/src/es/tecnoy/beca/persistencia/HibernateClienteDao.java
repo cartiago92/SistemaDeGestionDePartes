@@ -7,17 +7,22 @@ import org.hibernate.SessionFactory;
 
 import es.tecnoy.beca.entidades.Cliente;
 import es.tecnoy.beca.persistencia.interfaces.ClienteDao;
+import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateClienteDao extends HibernateAbstractDao implements ClienteDao{
-
-	public HibernateClienteDao(SessionFactory sf) {
+	
+	public HibernateClienteDao() {
 		super();
-		this.setSf(sf);
+	}
+
+	public HibernateClienteDao(HibernateContextoPersistencia cp) {
+		super();
+		this.setCp(cp);
 	}
 	
 	@Override
 	public void add(Cliente entidad) {
-		Session session = getSf().getCurrentSession();
+		Session session = getCp().getSesionActual();
 		Integer codigo = (Integer) session.save(entidad);
 		session.evict(entidad);
 		entidad.setCodigo(codigo);		

@@ -6,19 +6,20 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
 import es.tecnoy.beca.persistencia.interfaces.ServicioDao;
+import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 import es.tecnoy.beca.entidades.Servicio;
 
 public class HibernateServicioDao extends HibernateAbstractDao implements ServicioDao {
 
 	// A esto se le llama inyeccion por dependencia o inyeccion por constructor
-	public HibernateServicioDao(SessionFactory sf) {
+	public HibernateServicioDao(HibernateContextoPersistencia cp) {
 		super();
-		this.setSf(sf);
+		this.getCp();
 	}
 
 	@Override
 	public void add(Servicio entidad) {
-		Session sesion = getSf().getCurrentSession();
+		Session sesion = getCp().getSesionActual();
 		Integer pk = (Integer) sesion.save(entidad);
 		entidad.setCodigo(pk);
 	}
@@ -31,7 +32,7 @@ public class HibernateServicioDao extends HibernateAbstractDao implements Servic
 
 	@Override
 	public void edit(Servicio entidad) {
-		Session sesion = getSf().getCurrentSession();
+		Session sesion = getCp().getSesionActual();
 		sesion.update(entidad);
 	}
 
@@ -39,7 +40,7 @@ public class HibernateServicioDao extends HibernateAbstractDao implements Servic
 	@Override
 	public Servicio query(Integer codigo) {
 	
-		Session sesion = getSf().getCurrentSession();
+		Session sesion = getCp().getSesionActual();
 
 		//Metodo Load
 		return (Servicio) sesion.load(Servicio.class, codigo);
@@ -76,7 +77,7 @@ public class HibernateServicioDao extends HibernateAbstractDao implements Servic
 	@Override
 	public List<Servicio> query() {
 		
-		Session sesion = getSf().getCurrentSession();
+		Session sesion = getCp().getSesionActual();
 		
 		return sesion.createCriteria(Servicio.class).list();
 		

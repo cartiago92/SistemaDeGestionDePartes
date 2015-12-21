@@ -14,8 +14,7 @@ public class HibernateTecnicoDao extends HibernateAbstractDao implements Tecnico
 	
 	@Override
 	public void add(Tecnico entidad) {
-		Session session = cp.getSesionActual();
-		
+		Session session = getCp().getSesionActual();
 		Integer pk = (Integer) session.save(entidad);
 		
 		//evict lo que hace es que no se hagan actualizaciones en la base de datos involuntarias

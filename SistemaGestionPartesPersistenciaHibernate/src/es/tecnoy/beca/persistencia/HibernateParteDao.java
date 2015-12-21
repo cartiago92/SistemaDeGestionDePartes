@@ -10,17 +10,22 @@ import org.hibernate.SessionFactory;
 import es.tecnoy.beca.entidades.Parte;
 import es.tecnoy.beca.entidades.Parte.EstadoParte;
 import es.tecnoy.beca.persistencia.interfaces.ParteDao;
+import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateParteDao extends HibernateAbstractDao implements ParteDao {
 
-	public HibernateParteDao(SessionFactory sf) {
+	public HibernateParteDao() {
 		super();
-		this.setSf(sf);
+	}
+	
+	public HibernateParteDao(HibernateContextoPersistencia cp) {
+		super();
+		this.setCp(cp);
 	}
 
 	@Override
 	public void add(Parte entidad) {
-		Session session = getSf().getCurrentSession();
+		Session session = getCp().getSesionActual();
 		Integer codigo = (Integer) session.save(entidad);
 		session.evict(entidad);
 		entidad.setCodigo(codigo);
@@ -66,7 +71,7 @@ public class HibernateParteDao extends HibernateAbstractDao implements ParteDao 
 	@Override
 	public void updateWhereEstadoNoAprobado(Parte entidad) {
 
-		Session session = getSf().getCurrentSession();
+		Session session = getCp().getSesionActual();
 
 		// StringBuilder hql = new StringBuilder("update Parte p set ")
 		// .append("p.descripcion = :descripcion, ")
