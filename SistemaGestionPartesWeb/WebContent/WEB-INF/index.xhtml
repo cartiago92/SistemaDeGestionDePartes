@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+	<h:form>
+		<h:outputLabel value="#{controlador.mensaje}"></h:outputLabel>
+		<!-- Value nos habla sobre la opción seleccionado, a esto se le llama lenguaje de expresiones
+			 el # esta expresando que es dinamico unas veces vale una cosa y otras otra,
+			 accede a carazteristicas dentro de la variable, y esos objetos tienen que ser Mananged Bean
+			 selectOneView.option lo que estamos haciendo en realidad es un get y set option porque el # es bidireccional
+			 Id es el identificador que van a tener todos -->
+		<p:selectOneListbox id="basic" value="#{controlador.option}">
+			<f:selectItem itemLabel="Option 1" itemValue="1" />
+			<f:selectItem itemLabel="Option 2" itemValue="2" />
+			<f:selectItem itemLabel="Option 3" itemValue="3" />
+		</p:selectOneListbox>
+		
+		<h:commandButton action="#{controlador.Accion()}" />
+
+	</h:form>
+</h:body>
+</html>

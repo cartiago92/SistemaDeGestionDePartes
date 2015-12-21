@@ -10,6 +10,8 @@ import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateEmpresaServicioDao extends HibernateAbstractDao implements EmpresaServicioDao{
 
+	private HibernateContextoPersistencia cp;
+	
 	public HibernateEmpresaServicioDao() {
 		super();
 	}

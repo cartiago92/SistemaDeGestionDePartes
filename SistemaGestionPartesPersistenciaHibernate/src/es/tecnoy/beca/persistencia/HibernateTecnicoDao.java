@@ -10,6 +10,8 @@ import es.tecnoy.beca.utilidades.hibernate.HibernateContextoPersistencia;
 
 public class HibernateTecnicoDao extends HibernateAbstractDao implements TecnicoDao{
 
+	private HibernateContextoPersistencia cp;
+	
 	public HibernateTecnicoDao() {
 		super();
 	}
